@@ -1,0 +1,2 @@
+AAATAC	Sus
+CCTCCT	Res
