@@ -4,11 +4,13 @@ workflow insecticide_resistance_detect {
 	input {
 		File ASVBimeras
 		File seqtab_mixed
+		File vgsc_kmers
 	}
 	call asv_resistance_process {
 		input:
 			ASVBimeras = ASVBimeras,
-			seqtab_mixed = seqtab_mixed
+			seqtab_mixed = seqtab_mixed,
+			vgsc_kmers = vgsc_kmers
 	}
 
 	output {
@@ -25,13 +27,14 @@ task asv_resistance_process {
 	input {
 		File ASVBimeras
 		File seqtab_mixed
+		File vgsc_kmers
 	}
 
-	Map[String, String] in_map = {
-		"ASVBimeras": sub(ASVBimeras, "gs://", "/cromwell_root/"),
-		"seqtab_mixed": sub(seqtab_mixed, "gs://", "/cromwell_root/"),
-	}
-	File config_json = write_json(in_map)
+	#Map[String, String] in_map = {
+	#	"ASVBimeras": sub(ASVBimeras, "gs://", "/cromwell_root/"),
+	#	"seqtab_mixed": sub(seqtab_mixed, "gs://", "/cromwell_root/"),
+	#}
+	#File config_json = write_json(in_map)
 	command <<<
 	set -euxo pipefail
 	#set -x
