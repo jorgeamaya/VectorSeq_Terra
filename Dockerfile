@@ -29,9 +29,9 @@ ENV PATH=/root/google-cloud-sdk/bin/:${PATH}
 #Setup crcmodc for gsutil:
 RUN apt-get install -y gcc python3-dev python3-setuptools && pip3 uninstall -y crcmod && pip3 install --no-cache-dir -U crcmod
 
-COPY FindKmersASVs.pl .
-COPY script2_vgsc.R .
-COPY script1_vgsc.R .	
+COPY FindKmersASVs.pl FindKmersASVs.pl
+COPY script2_vgsc.R script2_vgsc.R
+COPY script1_vgsc.R script1_vgsc.R	
 #COPY seqtab_mixed.tsv .
 #COPY ASVBimeras.txt .
 #COPY master.sh .	

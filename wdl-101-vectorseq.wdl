@@ -39,6 +39,7 @@ task asv_resistance_process {
 	set -euxo pipefail
 	#set -x
 
+	find . -type f
 	mkdir Results
 
 	Rscript script1_vgsc.R
