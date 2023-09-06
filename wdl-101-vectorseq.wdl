@@ -41,17 +41,10 @@ task asv_resistance_process {
 
 	find . -type f
 	mkdir Results
-	echo ${ASVBimeras}
-	echo ${seqtab_mixed}
-	echo ${vgsc_kmers}
 	
 	echo ~{ASVBimeras}
 	echo ~{seqtab_mixed}
 	echo ~{vgsc_kmers}
-
-	cp ${ASVBimeras} /cromwell_root/.
-	cp ${seqtab_mixed} /cromwell_root/.
-	cp ${vgsc_kmers} /cromwell_root/.
 
 	cp ~{ASVBimeras} /cromwell_root/.
 	cp ~{seqtab_mixed} /cromwell_root/.
